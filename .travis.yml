@@ -1,0 +1,12 @@
+language: node_js
+node_js: 
+  - "8"
+env: 
+  - NODE_ENV=production
+  - HTTP_PORT=3000
+  - MONGODB_CONNECTION_STR=mongodb://returnhmd:aa2325he@ds147469.mlab.com:47469/db2
+cache:
+  directories:
+    - "node_modules"
+install:
+  - "npm install"
