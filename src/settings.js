@@ -14,7 +14,7 @@ const isDev = NODE_ENV === 'development'
 
 module.exports = {
   http: {
-    port: process.env.HTTP_PORT,
+    port: process.env.PORT || 3000,
   },
   db: {
     uri: process.env.MONGODB_CONNECTION_STR,
