@@ -1,12 +1,17 @@
 language: node_js
-node_js: 
-  - "8"
-env: 
-  - NODE_ENV=production
-  - HTTP_PORT=3000
-  - MONGODB_CONNECTION_STR=mongodb://returnhmd:aa2325he@ds147469.mlab.com:47469/db2
+node_js:
+- '8'
+env:
+- NODE_ENV=production
+- HTTP_PORT=3000
+- MONGODB_CONNECTION_STR="mMqe6YWHRZvmShoPOOxhJlq0twM4ASrtnsv0wJKQJ48TQTkJcXTVmTy4VVbQVv16/bHVFINZew2Gg89McifgqJRMBOFomhOWHdi+inImlU/mfjjncCtE8ROhM948LO7KIo09aFC00WIDFHQNNrMVtFNnjTOlunsxJ5x9d4RmJ+NFqFIWwBNrv0FnXIDXnVhqcwElcYTU8Ag3yr8aF5gkDeR+6zNXSdQsnF0J/NnxU0dzRVDCipGr64nSGx46Kzu7uGp/xNgOcT2Oz+4DNysYkdQz/fyiFgMkHltMdSicjmXh11C0ceNIZRlJZJVf/lzTTVy1F+bvlvjY6rHs6OzfbhxOXFXeD8dWUExxu27btNDzkghhheKl+F25LTsFKyvhFRkpzFBUQT7B4nwOf8abIXbVvIpKmDMa4hz0rIChRCTaNVlfO3BOUJ85nsiV8v2+BdmoBm/phK7DIavuvVhCM2FTxGXpgkSrsWqiRUVoTvS7jGPjQRSONT0kqnLjhi7xH8Rt+QgQyHndToFQtNoLKR3YA6H56zNGMMtSb3vW/CJ+JH8Kvp/vvljiIoZ7YJ1BLx7SN6sLFO8eqMDIE6WAcVgvj04H+BdZ9YzRktqSziszR+B7MaqdnF2oPXR15ux3u/XljdmQUug1HAL1QzL6aFvAMOb8+LFjcIF76O6P5u8="
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 install:
-  - "npm install"
+- npm install
+deploy:
+  provider: heroku
+  api_key:
+    secure: lN5pU2HrRPgX0ObLTHipafzGkG+T8Lq8MXUqJmFGF4CaWEJ+bLdduvtIrb3xKbT8LbL8I37laEmO6Iom1DX6VlBIhEqmE8di0Spy2g7nm3Y+fMd+68e+N+SDQ8qWS7mc/UL+STThtaDAdBkxzU+dPRGiIwPeyD9bfQSRg9Qb0w9hve0jYhwzBiZKSmPJWflK9BP1d0CW++lmxnnixzkIjiNOwx6FiPEQGPDkshdp3SKSQiduwvXU3BC/wmKFBPbcMIzMezyVwgMUFkUZ+QoxMoEUF3JO7hRzBuvING0mivJOClh1c1CvGs3pF8tlOvA6qW/ol7PF7FWwC3B6auHpq59JiDRBj92phYCwNBB7e4MURd/B/j53qQ3377qWC7viHIqbrjDgY0I5Pq4WOnOnadCSXu/aQVXGM7F1m5/l76w+/is+YmAIp2P8YtDC9q2u7pLYIHZ6fDZCFMoVIGjl6UNcSDlKVpGTA+fqeXJAvqhoglRANBBE4Y4xnIIQcuAwUxOvz5po4viydOjSzGp113tqUx/J1iB46dIm24j3IbXOZ1ufy6VkTTcTWicnKPIj/0q5eYORcsHY7c8E2oqRK+sUh07uuiVWnyDljFJM0mkiYtLF/0eoQ+y1Oa/TFteUIJaS1dX042RvX7vIBGhxafmxSHdvMLPRyFWc42pRp+M=
+  app: messages-api
