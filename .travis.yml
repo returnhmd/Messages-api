@@ -2,8 +2,9 @@ language: node_js
 node_js:
 - '8'
 env:
-- NODE_ENV=production HTTP_PORT=3000 MONGODB_CONNECTION_STR="mMqe6YWHRZvmShoPOOxhJlq0twM4ASrtnsv0wJKQJ48TQTkJcXTVmTy4VVbQVv16/bHVFINZew2Gg89McifgqJRMBOFomhOWHdi+inImlU/mfjjncCtE8ROhM948LO7KIo09aFC00WIDFHQNNrMVtFNnjTOlunsxJ5x9d4RmJ+NFqFIWwBNrv0FnXIDXnVhqcwElcYTU8Ag3yr8aF5gkDeR+6zNXSdQsnF0J/NnxU0dzRVDCipGr64nSGx46Kzu7uGp/xNgOcT2Oz+4DNysYkdQz/fyiFgMkHltMdSicjmXh11C0ceNIZRlJZJVf/lzTTVy1F+bvlvjY6rHs6OzfbhxOXFXeD8dWUExxu27btNDzkghhheKl+F25LTsFKyvhFRkpzFBUQT7B4nwOf8abIXbVvIpKmDMa4hz0rIChRCTaNVlfO3BOUJ85nsiV8v2+BdmoBm/phK7DIavuvVhCM2FTxGXpgkSrsWqiRUVoTvS7jGPjQRSONT0kqnLjhi7xH8Rt+QgQyHndToFQtNoLKR3YA6H56zNGMMtSb3vW/CJ+JH8Kvp/vvljiIoZ7YJ1BLx7SN6sLFO8eqMDIE6WAcVgvj04H+BdZ9YzRktqSziszR+B7MaqdnF2oPXR15ux3u/XljdmQUug1HAL1QzL6aFvAMOb8+LFjcIF76O6P5u8="
-cache:
+  global:
+  - NODE_ENV=production 
+ cache:
   directories:
   - node_modules
 install:
