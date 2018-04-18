@@ -1,8 +1,8 @@
 {
 	"info": {
-		"name": "messages API",
-		"_postman_id": "c6125167-b7e0-4dc3-aa05-c1bde32e915a",
-		"description": "",
+		"name": "messages-API",
+		"_postman_id": "f95e7a85-d318-4fd0-a1a7-077a7cb4a4a9",
+		"description": "API for messages :)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -46,12 +46,12 @@
 						"messages"
 					]
 				},
-				"description": "Creates message and validate them. Returns Object with only one field '_id' of created message.\n\nExample responce: \n```{\n    \"_id\": \"5ad6e5541d8d9e00147e3595\"\n}```"
+				"description": "Creates message and validate them. Returns Object with only one field '_id' of created message.\n\nExample responce: \n```\n{\n    \"_id\": \"5ad6e5541d8d9e00147e3595\"\n}\n```"
 			},
 			"response": []
 		},
 		{
-			"name": "http://www.humenyuk.com/api/messages/single/5ad6e5541d8d9e00147e3595",
+			"name": "http://www.humenyuk.com/api/messages/single/:SomeIdHere",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -80,12 +80,12 @@
 						}
 					]
 				},
-				"description": "Finds and returns a message on the id, which is specified in the address.\n\n___http://www.humenyuk.com/api/messages/single/:SomeIdHere___\n\nExample of responce:\n```{\n    \"_id\": \"5ad6e5541d8d9e00147e3595\",\n    \"email\": \"email@gmail.com\",\n    \"text\": \"Hello, World! What's up?\",\n    \"createdAt\": \"2018-04-18T06:27:32.217Z\",\n    \"updatedAt\": \"2018-04-18T06:27:32.217Z\"\n}```"
+				"description": "Finds and returns a message on the id, which is specified in the address.\n\nExample of responce:\n```\n{\n    \"_id\": \"5ad6e5541d8d9e00147e3595\",\n    \"email\": \"email@gmail.com\",\n    \"text\": \"Hello, World! What's up?\",\n    \"createdAt\": \"2018-04-18T06:27:32.217Z\",\n    \"updatedAt\": \"2018-04-18T06:27:32.217Z\"\n}\n```"
 			},
 			"response": []
 		},
 		{
-			"name": "http://www.humenyuk.com/api/messages/list/0",
+			"name": "http://www.humenyuk.com/api/messages/list/:paginationNumber",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -105,7 +105,7 @@
 						"0"
 					]
 				},
-				"description": "Returns an array of Objects with messages for a given pagination. Maximum one array can contain ten Objects.\n\n___http://www.humenyuk.com/api/messages/list/:paginationNumber___\n\nExample responce:\n```[\n    {\n        \"_id\": \"5ad6e5541d8d9e00147e3595\",\n        \"email\": \"email@gmail.com\",\n        \"text\": \"Hello, World! What's up?\",\n        \"createdAt\": \"2018-04-18T06:27:32.217Z\",\n        \"updatedAt\": \"2018-04-18T06:27:32.217Z\"\n    },\n    {\n        \"_id\": \"5ad6eb0f1d8d9e00147e3596\",\n        \"email\": \"daenerys@gmail.com\",\n        \"text\": \"Hello everyone, i am Daenerys Targaryen! What's up with my dragons?\",\n        \"createdAt\": \"2018-04-18T06:51:59.110Z\",\n        \"updatedAt\": \"2018-04-18T06:51:59.110Z\"\n    }\n]```"
+				"description": "Returns an array of Objects with messages for a given pagination. Maximum one array can contain ten Objects.\n\nExample responce:\n```\n[\n    {\n        \"_id\": \"5ad6e5541d8d9e00147e3595\",\n        \"email\": \"email@gmail.com\",\n        \"text\": \"Hello, World! What's up?\",\n        \"createdAt\": \"2018-04-18T06:27:32.217Z\",\n        \"updatedAt\": \"2018-04-18T06:27:32.217Z\"\n    },\n    {\n        \"_id\": \"5ad6eb0f1d8d9e00147e3596\",\n        \"email\": \"daenerys@gmail.com\",\n        \"text\": \"Hello everyone, i am Daenerys Targaryen! What's up with my dragons?\",\n        \"createdAt\": \"2018-04-18T06:51:59.110Z\",\n        \"updatedAt\": \"2018-04-18T06:51:59.110Z\"\n    }\n]\n```"
 			},
 			"response": []
 		},
@@ -127,9 +127,31 @@
 						"iamsure"
 					]
 				},
-				"description": "Сlears the message collection.\n\n\nExample responce:\n```{\n    \"message\": \"Messages collection successfully cleared!\"\n}```"
+				"description": "Сlears the message collection.\n\n\nExample responce:\n```\n{\n    \"message\": \"Messages collection successfully cleared!\"\n}\n```"
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1dd62bb4-20c6-49d4-94e2-dedbd8a33c4a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "af5e1316-94da-484a-8d62-e1e2fcc62934",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
