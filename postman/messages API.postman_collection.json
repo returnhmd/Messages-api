@@ -1,0 +1,135 @@
+{
+	"info": {
+		"name": "messages API",
+		"_postman_id": "c6125167-b7e0-4dc3-aa05-c1bde32e915a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://www.humenyuk.com/api/messages",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "email@gmail.com",
+							"description": "Author email. Email must be valid.",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "Hello, World! What's up?",
+							"description": "Some text message. Can not be longer than 100 character.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://www.humenyuk.com/api/messages",
+					"protocol": "http",
+					"host": [
+						"www",
+						"humenyuk",
+						"com"
+					],
+					"path": [
+						"api",
+						"messages"
+					]
+				},
+				"description": "Creates message and validate them. Returns Object with only one field '_id' of created message.\n\nExample responce: \n```{\n    \"_id\": \"5ad6e5541d8d9e00147e3595\"\n}```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://www.humenyuk.com/api/messages/single/5ad6e5541d8d9e00147e3595",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://www.humenyuk.com/api/messages/single/5ad6e5541d8d9e00147e3595",
+					"protocol": "http",
+					"host": [
+						"www",
+						"humenyuk",
+						"com"
+					],
+					"path": [
+						"api",
+						"messages",
+						"single",
+						"5ad6e5541d8d9e00147e3595"
+					],
+					"query": [
+						{
+							"key": "messageId",
+							"value": "5ad6e5541d8d9e00147e3595",
+							"equals": true,
+							"description": "For search the right message in DB by id.",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Finds and returns a message on the id, which is specified in the address.\n\n___http://www.humenyuk.com/api/messages/single/:SomeIdHere___\n\nExample of responce:\n```{\n    \"_id\": \"5ad6e5541d8d9e00147e3595\",\n    \"email\": \"email@gmail.com\",\n    \"text\": \"Hello, World! What's up?\",\n    \"createdAt\": \"2018-04-18T06:27:32.217Z\",\n    \"updatedAt\": \"2018-04-18T06:27:32.217Z\"\n}```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://www.humenyuk.com/api/messages/list/0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://www.humenyuk.com/api/messages/list/0",
+					"protocol": "http",
+					"host": [
+						"www",
+						"humenyuk",
+						"com"
+					],
+					"path": [
+						"api",
+						"messages",
+						"list",
+						"0"
+					]
+				},
+				"description": "Returns an array of Objects with messages for a given pagination. Maximum one array can contain ten Objects.\n\n___http://www.humenyuk.com/api/messages/list/:paginationNumber___\n\nExample responce:\n```[\n    {\n        \"_id\": \"5ad6e5541d8d9e00147e3595\",\n        \"email\": \"email@gmail.com\",\n        \"text\": \"Hello, World! What's up?\",\n        \"createdAt\": \"2018-04-18T06:27:32.217Z\",\n        \"updatedAt\": \"2018-04-18T06:27:32.217Z\"\n    },\n    {\n        \"_id\": \"5ad6eb0f1d8d9e00147e3596\",\n        \"email\": \"daenerys@gmail.com\",\n        \"text\": \"Hello everyone, i am Daenerys Targaryen! What's up with my dragons?\",\n        \"createdAt\": \"2018-04-18T06:51:59.110Z\",\n        \"updatedAt\": \"2018-04-18T06:51:59.110Z\"\n    }\n]```"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/messages/clear/iamsure",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/messages/iamsure",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"messages",
+						"iamsure"
+					]
+				},
+				"description": "Сlears the message collection.\n\n\nExample responce:\n```{\n    \"message\": \"Messages collection successfully cleared!\"\n}```"
+			},
+			"response": []
+		}
+	]
+}
