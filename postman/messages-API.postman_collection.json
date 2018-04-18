@@ -110,7 +110,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:3000/api/messages/clear/iamsure",
+			"name": "http://www.humenyuk.com/api/messages/clear/iamsure",
 			"request": {
 				"method": "DELETE",
 				"header": [],
