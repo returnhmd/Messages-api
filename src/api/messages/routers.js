@@ -41,4 +41,10 @@ router.get('/single/:messageId', async ctx => {
   ctx.body = foundMessage
 })
 
+router.del('/clear/iamsure', async ctx => {
+  await MessageModel.remove({})
+  ctx.status = 202
+  ctx.body = { message: 'Messages collection successfully cleared!' }
+})
+
 module.exports = router
